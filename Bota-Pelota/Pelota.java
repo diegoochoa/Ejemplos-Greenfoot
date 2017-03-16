@@ -10,6 +10,20 @@ public class Pelota extends Actor
     {
         incx=10;
         incy=10;
+        int mx=1;
+        int my=1;
+        int aleatoriox = Greenfoot.getRandomNumber(10);
+        int aleatorioy = Greenfoot.getRandomNumber(10);
+        if(aleatoriox >5)
+        {
+            mx=-1;
+        }
+        if(aleatorioy >5)
+        {
+            my=-1;
+        }
+        incx = incx*mx;
+        incy = incy*my;
     }
    
     
@@ -19,14 +33,8 @@ public class Pelota extends Actor
         //consulta las coordenadas actuales heredadas de actor 
         int posx=this.getX();
         int posy=this.getY();
-      /*
-        int aleatorio = Greenfoot.getRandomNumber(10);
-        if(aleatorio >5)
-        {
-            incx = incx * -1;
-            //incy = incy * -1;
-        }
-        */
+      
+       
         //calculamos las nuevas coordenadas
         int newx = posx + incx;
         int newy = posy + incy;
