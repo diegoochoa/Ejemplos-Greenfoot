@@ -25,7 +25,7 @@ public class Pelota extends Actor
         incx = incx*mx;
         incy = incy*my;
     }
-   
+
     
     @Override
     public void act() 
@@ -55,6 +55,9 @@ public class Pelota extends Actor
         }
         //cambiamos de posicion a la pelota
         this.setLocation(newx,newy);
+        
+        
     }    
+   
 }
 
