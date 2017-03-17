@@ -35,5 +35,9 @@ public class Escenario extends World
         addObject(pelota3,90,192);
         Jugador jugador = new Jugador();
         addObject(jugador,284,350);
+        Pelota pelota4 = new Pelota();
+        addObject(pelota4,517,218);
+        Pelota pelota5 = new Pelota();
+        addObject(pelota5,131,92);
     }
 }

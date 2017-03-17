@@ -4,6 +4,7 @@ import java.util.List;
 public class Jugador extends Actor
 {
     private boolean disparando;
+    private int cont = 0;
     public Jugador()
     {
         disparando=false;
@@ -27,18 +28,29 @@ public class Jugador extends Actor
         }
         
         String key = Greenfoot.getKey();
-        //Greenfoot.isKeyDown("space") CON ESTE SALEN MUCHAS BALAS A LA VEZ
-        if(key == "space" && !disparando){
+        // va en el condicional Greenfoot.isKeyDown("space") CON ESTE SALEN MUCHAS BALAS A LA VEZ
+        //Con esta condicional permite solo un disparo en el mundo
+        /*if(key == "space" && !disparando){
             Disparo d = new Disparo();
             World mundo = this.getWorld();
             mundo.addObject(d,this.getX(),this.getY()-35);
             disparando=true;
+        }*/ 
+        
+        //Con esta condicional permite un numero maximo de disparos, en este caso 3
+        if(key == "space" && cont<5){
+            Disparo d = new Disparo();
+            World mundo = this.getWorld();
+            mundo.addObject(d,this.getX(),this.getY()-35);
+            cont++;
         }
         
+        //Checa los disparos existentes en pantalla, funciona para uno o mas de uno
         World mundo = this.getWorld();
         List lista = mundo.getObjects(Disparo.class);
         if(lista.isEmpty()){
-            disparando=false;    
+            cont=0;
+            //disparando=false;    
         }
     }
 }
