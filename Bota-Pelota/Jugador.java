@@ -28,7 +28,7 @@ public class Jugador extends Actor
         }
         
         String key = Greenfoot.getKey();
-        // va en el condicional Greenfoot.isKeyDown("space") CON ESTE SALEN MUCHAS BALAS A LA VEZ
+        // va en el condicional if(Greenfoot.isKeyDown("space")) CON ESTE SALEN MUCHAS BALAS A LA VEZ
         //Con esta condicional permite solo un disparo en el mundo
         /*if(key == "space" && !disparando){
             Disparo d = new Disparo();
@@ -38,7 +38,7 @@ public class Jugador extends Actor
         }*/ 
         
         //Con esta condicional permite un numero maximo de disparos, en este caso 3
-        if(key == "space" && cont<5){
+        if(key == "space" && cont<3){
             Disparo d = new Disparo();
             World mundo = this.getWorld();
             mundo.addObject(d,this.getX(),this.getY()-35);
